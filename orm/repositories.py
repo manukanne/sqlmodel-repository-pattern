@@ -77,6 +77,7 @@ class GenericRepository(Generic[T], ABC):
 class GenericSqlRepository(GenericRepository[T], ABC):
     """Generic SQL Repository.
     """
+
     def __init__(self, session: Session, model_cls: Type[T]) -> None:
         """Creates a new repository instance.
 
@@ -122,7 +123,7 @@ class GenericSqlRepository(GenericRepository[T], ABC):
         if len(where_clauses) == 1:
             stmt = stmt.where(where_clauses[0])
         elif len(where_clauses) > 1:
-            stmt.where(and_(*where_clauses))
+            stmt = stmt.where(and_(*where_clauses))
         return stmt
 
     def list(self, **filters) -> List[T]:
@@ -145,6 +146,7 @@ class GenericSqlRepository(GenericRepository[T], ABC):
         record = self.get_by_id(id)
         if record is not None:
             self._session.delete(record)
+            self._session.flush()
 
 
 class HeroReposityBase(GenericRepository[Hero], ABC):
