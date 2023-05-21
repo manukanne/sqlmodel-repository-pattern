@@ -6,7 +6,7 @@ This repository includes a example implementation of the Unit of Work design and
 title: Unit of Work + Repository pattern
 ---
 classDiagram
-     direction BT
+     direction LR
     GenericRepository <|--GenericSqlRepository
     GenericRepository <|-- HeroReposityBase
     GenericRepository <|-- TeamRepositoryBase
