@@ -36,12 +36,13 @@ classDiagram
         -_construct_list_stmt(**filters)
     }
     class HeroReposityBase{
-        
+        +get_by_name(str name) Hero
     }
     class HeroRepository{
 
     }
     class TeamRepositoryBase{
+        +get_by_name(str name) Team
     }
     class TeamRepository{
     }
