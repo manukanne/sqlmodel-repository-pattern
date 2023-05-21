@@ -152,19 +152,32 @@ class GenericSqlRepository(GenericRepository[T], ABC):
 class HeroReposityBase(GenericRepository[Hero], ABC):
     """Hero repository.
     """
-    ...
+    @abstractmethod
+    def get_by_name(self, name: str) -> Optional[Hero]:
+        raise NotImplementedError()
 
 
 class HeroRepository(GenericSqlRepository[Hero], HeroReposityBase):
     def __init__(self, session: Session) -> None:
         super().__init__(session, Hero)
 
+    def get_by_name(self, name: str) -> Optional[Hero]:
+        stmt = select(Hero).where(Hero.name == name)
+        return self._session.exec(stmt).first()
+
 
 class TeamRepositoryBase(GenericRepository[Team], ABC):
     """Team repository.
     """
+    @abstractmethod
+    def get_by_name(self, name: str) -> Optional[Team]:
+        raise NotImplementedError()
 
 
 class TeamRepository(GenericSqlRepository[Team], TeamRepositoryBase):
     def __init__(self, session: Session) -> None:
         super().__init__(session, Team)
+
+    def get_by_name(self, name: str) -> Optional[Team]:
+        stmt = select(Team).where(Team.name == name)
+        return self._session.exec(stmt).first()

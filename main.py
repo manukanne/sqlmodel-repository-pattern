@@ -29,15 +29,14 @@ with UnitOfWork(session_factory=session_maker) as uow:
 
     print("-------------------------- Print dream team ----------------------------------")
     print_team_members(team)
-
-    hero_hulk = uow.heroes.list(name="Bruce Banner", secret_name="Hulk")[0]
+    hero_hulk = uow.heroes.get_by_name("Bruce Banner")
     hero_hulk.secret_name = "Incredible Hulk"
     hero_hulk = uow.heroes.update(hero_hulk)
 
     print("-------------------------- Print updated dream team ----------------------------------")
     print_team_members(team)
 
-    hero_john = uow.heroes.list(name="John Wick")[0]
+    hero_john = uow.heroes.list(secret_name="John Wick")[0]
     hero_john.team_id = None
     uow.heroes.update(hero_john)
 
