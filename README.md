@@ -1,6 +1,8 @@
 # SQLModel Repository pattern
 This repository includes a example implementation of the Unit of Work design and Repository design pattern.
 
+For more details please checkout my [blog post](https://dev.to/manukanne/a-python-implementation-of-the-unit-of-work-and-repository-design-pattern-using-sqlmodel-3mb5)!
+
 ```mermaid
 ---
 title: Unit of Work + Repository pattern
