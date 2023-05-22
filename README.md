@@ -97,5 +97,6 @@ python main.py
 This project is licensed under the MIT permissive license - see the [Licence file](LICENSE) for details.
 
 # Acknowledgments
+- [Architecture Patterns with Python](https://www.oreilly.com/library/view/architecture-patterns-with/9781492052197/)
 - [Implementing the Repository and Unit of Work Patterns in an ASP.NET MVC Application](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
 - [SQLModel](https://sqlmodel.tiangolo.com/)
