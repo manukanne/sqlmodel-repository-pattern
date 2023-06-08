@@ -92,7 +92,7 @@ In order to run the program, simple execute the following command:
 python main.py
 ```
 
-# Auhors
+# Authors
 [Manuel Kanetscheider](https://dev.to/manukanne)
 
 # License
